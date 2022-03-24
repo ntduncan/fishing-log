@@ -1,0 +1,15 @@
+POST http://localhost:3000/catch/create-catch
+Content-Type: application/json
+
+{
+    "bait": "ant",
+    "location": "test location",
+    "img": "https://img.search.brave.com/liCzQTkCW0p20C40rRcsGZCnLXm1E4cH3eZCE9nW5to/rs:fit:864:570:1/g:ce/aHR0cHM6Ly93d3cu/bWFyaW9ub25saW5l/LmNvbS9tZWRpYS8y/MDE1LzAzL1JhaW5i/b3ctVHJvdXQuanBn",
+    "length": "14",
+    "date": "1/1/22",
+    "species": "rainbow"
+}
+
+###
+
+GET http://localhost:3000/catch/get-catches
