@@ -1,32 +1,42 @@
-
-const mongoose = require('mongoose');
+const mongoose = require("mongoose");
 const Schema = mongoose.Schema;
 
 const catchSchema = new Schema({
-    bait: {
-        type: String,
-        required: true
-    },
-    location: {
-        type: String,
-        required: true
-    },
-    img: {
-        type: String,
-        required: false
-    },
-    length: {
-        type: Number,
-        required: true,
-    },
-    date: {
-        type: String,
-        required: true
-    },
-    species: {
-        type: String,
-        required: true,
-    },
-})
+  id: {
+    type: String,
+    required: true,
+  },
 
-module.exports = mongoose.model('Catch', catchSchema);
+  location: {
+    type: String,
+    required: true,
+  },
+  img: {
+    type: String,
+    required: false,
+  },
+  date: {
+    type: String,
+    required: true,
+  },
+  fish: {
+    type: [
+      {
+        species: {
+          type: String,
+          required: true,
+        },
+        length: {
+            type: Number,
+            required: true,
+        },
+        bait: {
+          type: String,
+          required: true,
+        },
+      },
+    ],
+  },
+});
+
+module.exports = mongoose.model("Catch", catchSchema);

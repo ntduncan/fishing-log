@@ -1,1 +1,12 @@
 /* You can add global styles to this file, and also import other style files */
+@import url("https://fonts.googleapis.com/css2?family=Share+Tech+Mono&display=swap");
+
+body {
+  box-sizing: content-box;
+  font-family: "Share Tech Mono", monospace;
+  background: #CCCCB2;  /* fallback for old browsers */
+  background: -webkit-linear-gradient(to right,  #CCCCB2, #bbbb9c);  /* Chrome 10-25, Safari 5.1-6 */
+  background: linear-gradient(to right, #CCCCB2, #bbbb9c ); /* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+  
+
+}

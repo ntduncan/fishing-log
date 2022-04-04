@@ -1,15 +1,18 @@
-POST http://localhost:3000/catch/create-catch
+POST http://localhost:3000/catch
 Content-Type: application/json
 
 {
-    "bait": "ant",
-    "location": "test location",
-    "img": "https://img.search.brave.com/liCzQTkCW0p20C40rRcsGZCnLXm1E4cH3eZCE9nW5to/rs:fit:864:570:1/g:ce/aHR0cHM6Ly93d3cu/bWFyaW9ub25saW5l/LmNvbS9tZWRpYS8y/MDE1LzAzL1JhaW5i/b3ctVHJvdXQuanBn",
-    "length": "14",
-    "date": "1/1/22",
-    "species": "rainbow"
+    "id": "1",
+    "location": "Teton Dam",
+    "img": "https://imgs.search.brave.com/lUnZa7NoaDmC-yMwEFXGhhaPDBWsfDP2j9aKvz4w2C8/rs:fit:711:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5Q/TDdIMDIxMFZVNHlk/OFdodnMwUUJ3SGFF/OCZwaWQ9QXBp",
+    "date": "3/30/22",
+    "fish": [{
+      "species": "cutthroat",
+      "length": 13,
+      "bait": "Yellow Streamer"
+    }]
 }
 
 ###
 
-GET http://localhost:3000/catch/get-catches
+GET http://localhost:3000/catch

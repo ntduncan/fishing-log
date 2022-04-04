@@ -1,1 +1,46 @@
-<p>fishing-log-edit works!</p>
+<form id="fishing-log-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
+    <div class="form-group">
+        <label for="location">Location</label>
+        <input 
+        type="text"
+        id="location"
+        class="form-control"
+        max="255"
+        name="location"
+        [ngModel]="fishingLog?.location" 
+        #name="ngModel"
+        required
+        >
+    </div>
+    <div class="form-group">
+        <label for="date">date</label>
+        <input 
+        type="date"
+        id="date"
+        class="form-control"
+        name="date"
+        [ngModel]="fishingLog?.location" 
+        #name="ngModel"
+        required>
+    </div>
+    <div class="form-group">
+        <label for="image">Image Url</label>
+        <input 
+        type="text"
+        id="image"
+        class="form-control"
+        name="image"
+        [ngModel]="fishingLog?.img" 
+        #name="ngModel">
+    </div>
+    <div class="fish-form">
+        <h4>Fish</h4>
+        <div class="addedFish" *ngFor="fish of fishes">
+            {{fish.species}} | {{fish.length}} | {{fish.bait}}
+            <button (onClick)="onRemoveItem(fishes.indexOf(fish))">X</button> 
+        </div>
+        <form id="fish-list-form" (ngSubmit)="addToFishes(fishyForm)" #fishyForm="ngForm">
+
+        </form>
+    </div>
+</form>

@@ -28,22 +28,26 @@ const getCatch = (req, res, next) => {
 }
 
 const createCatch = (req, res, next) => {
-    const bait = req.body.bait;
+    const id = req.body.id
+    // const bait = req.body.bait;
     const location = req.body.location;
     const img = req.body.img;
-    const length = req.body.length;
+    // const length = req.body.length;
     const date = req.body.date;
-    const species = req.body.species;
+    // const species = req.body.species;
+    const fish = req.body.fish
 
     console.log(req.body)
  
     const catchObj = new Catch({
-       bait: bait,
+       id: id,
+      //  bait: bait,
        location: location,
        img: img,
-       length: length,
+      //  length: length,
        date: date,
-       species: species
+      //  species: species
+      fish: fish
     });
  
     catchObj

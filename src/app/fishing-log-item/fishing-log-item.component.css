@@ -1,0 +1,54 @@
+.fishing-log {  
+  display: flex;
+  flex-direction: row;
+  height: 200px;
+  width: 30vw;
+  min-width: 800px;
+  overflow: hidden;
+  background-color: #c4c4c4;
+  z-index: 0;
+  border-radius: 20px;
+  margin: 1.5em;
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+}
+.fishing-log:hover .meta {
+  transform: scale(1.2);
+}
+.fishing-log:hover .description {
+  transform: translateX(2em);
+}
+
+.photo {
+  z-index: 0;
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  max-width: 300px;
+  background-size: cover;
+  background-position: center;
+}
+
+.meta {
+  position: relative;
+  width: 300px;
+  overflow: hidden;
+  transition: transform 0.2s;
+}
+
+.description {
+  position: relative;
+  margin-left: 1em;
+  color: #fff;
+  transition: transform 0.2s;
+  width: 50vw;
+}
+
+.fish-species {
+    text-transform: capitalize;
+}
+
+.species-list:not(:last-child)::after {
+    content: ", ";
+}

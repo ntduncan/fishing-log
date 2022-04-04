@@ -1,3 +1,3 @@
 export class Fish {
-    constructor(species: String, length: Number) {}
+    constructor(public species: string, public length: number, public bait: string) {}
 }
