@@ -19,7 +19,7 @@
         id="date"
         class="form-control"
         name="date"
-        [ngModel]="fishingLog?.location" 
+        [ngModel]="date" 
         #name="ngModel"
         required>
     </div>
@@ -71,6 +71,8 @@
         </div>
     </div>
     <div class="form-buttons">
-        <button class="btn primary-btn">Add Fish</button>
+        <button class="btn btn-primary" *ngIf="!editMode">Add Log</button>
+        <button class="btn btn-primary" *ngIf="editMode">Update Log</button>
+        <button class="btn btn-secondary">Cancel</button>
     </div>
 </form>

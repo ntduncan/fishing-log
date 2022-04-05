@@ -11,10 +11,12 @@ import { FishingLog } from '../fishing-log/FishingLog.model';
   styleUrls: ['./fishing-log-edit.component.css']
 })
 export class FishingLogEditComponent implements OnInit {
+
   originalFishingLog: FishingLog;
   fishingLog: FishingLog;
   fishes: Fish[] = [];
   editMode: boolean = false;
+  date: string;
   id: string = "";
 
 
@@ -34,6 +36,10 @@ export class FishingLogEditComponent implements OnInit {
 
       this.editMode = true;
       this.fishingLog = Object.assign({}, this.originalFishingLog)
+      const d = new Date(this.fishingLog?.date);
+      // this.date = `${d.getFullYear()}-${d.getMonth() < 10 ? "0"+d.getMonth(): d.getMonth()}-${d.getDate() < 10 ? "0"+d.getDate(): d.getDate()}`
+      this.date = d.toISOString().split("T")[0];
+      console.log(this.date)
       if(this.fishingLog.fish.length > 0) this.fishes = this.fishingLog.fish;
     })
   }

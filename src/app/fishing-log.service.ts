@@ -37,7 +37,7 @@ export class FishingLogService {
     .subscribe((fishingLogs: any) => {
       this.fishingLogs = fishingLogs;
       this.fishingLogsListChangedEvent.next(this.fishingLogs.slice());
-      console.log(this.fishingLogs)
+      
     })
     return this.fishingLogs;
   }

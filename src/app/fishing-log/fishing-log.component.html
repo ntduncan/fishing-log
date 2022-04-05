@@ -1,5 +1,6 @@
 
 <div class="fishing-log-container">
-    <app-fishing-log-edit></app-fishing-log-edit>
+    <button class="btn" [routerLink]="['new']">Add New Log</button>
     <app-fishing-log-list></app-fishing-log-list>
+    <router-outlet></router-outlet>
 </div>
