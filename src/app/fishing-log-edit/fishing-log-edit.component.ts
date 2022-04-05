@@ -58,9 +58,11 @@ export class FishingLogEditComponent implements OnInit {
   onSubmit(form: NgForm) {
     const d = new Date(form.value.date);
     const date = d.toLocaleDateString();
+    const fish = [new Fish(form.value.species, form.value.length, form.value.bait)]
 
-    const id = (this.fishingLogService.getFishingLogs.length + 1).toString()
-    const newFishingLog = new FishingLog(id, form.value.location, form.value.img, date, this.fishes)
+    const id = (this.fishingLogService.getFishingLogs().length).toString()
+    console.log(id)
+    const newFishingLog = new FishingLog(id, form.value.location, form.value.image, date, fish)
 
     if (!this.editMode){
       this.fishingLogService.addFishingLog(newFishingLog);
@@ -68,7 +70,7 @@ export class FishingLogEditComponent implements OnInit {
       this.fishingLogService.updateFishingLog(this.originalFishingLog, newFishingLog)
     }
 
-    this.router.navigateByUrl('/log');
+    this.router.navigateByUrl('/');
   }
 
 }

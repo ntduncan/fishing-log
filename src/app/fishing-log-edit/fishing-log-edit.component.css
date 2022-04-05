@@ -1,0 +1,44 @@
+.btn {
+    width: 90px;
+    height: 40px;
+    border-radius: 5px;
+    border: none;
+    background-color: #CCCCB2;
+
+}
+
+.btn:active {
+    background-color: #bbbb9c;
+}
+
+.fishing-log-edit {
+    background-color: #C4C4C4;
+    padding: 1em;
+}
+
+.form-group .form-control {
+    position: relative;
+    font-size: 16px;
+    height: auto;
+    padding: 10px;
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
+}
+.form-group .form-control:focus {
+    z-index: 2;
+}
+
+
+.form-group {
+    max-width: 380px;
+    padding: 1em;
+    margin: 0 auto;
+    background-color: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.1);
+  }
+  /* .form-group input[type=password] {
+    margin-bottom: 20px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  } */

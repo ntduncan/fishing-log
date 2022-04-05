@@ -6,9 +6,9 @@ import { FishingLogEditComponent } from '../fishing-log-edit/fishing-log-edit.co
 import { FishingLogDetailComponent } from '../fishing-log-detail/fishing-log-detail.component';
 
 const appRoutes: Routes = [
-  {path: '', redirectTo: '/logs', pathMatch: 'full'},
+  // {path: '', redirectTo: '/logs', pathMatch: 'full'},
   {
-    path: 'logs',
+    path: '/',
     component: FishingLogComponent,
     children: [
       {path: 'new', component: FishingLogEditComponent},

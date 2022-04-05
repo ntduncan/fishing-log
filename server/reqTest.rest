@@ -2,7 +2,7 @@ POST http://localhost:3000/catch
 Content-Type: application/json
 
 {
-    "id": "1",
+    "id": "2",
     "location": "Teton Dam",
     "img": "https://imgs.search.brave.com/lUnZa7NoaDmC-yMwEFXGhhaPDBWsfDP2j9aKvz4w2C8/rs:fit:711:225:1/g:ce/aHR0cHM6Ly90c2Ux/Lm1tLmJpbmcubmV0/L3RoP2lkPU9JUC5Q/TDdIMDIxMFZVNHlk/OFdodnMwUUJ3SGFF/OCZwaWQ9QXBp",
     "date": "3/30/22",
@@ -14,5 +14,7 @@ Content-Type: application/json
 }
 
 ###
-
 GET http://localhost:3000/catch
+
+###
+DELETE http://localhost:3000/catch/2

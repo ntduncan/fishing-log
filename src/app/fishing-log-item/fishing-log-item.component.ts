@@ -1,4 +1,5 @@
 import { Component, Input, OnInit } from '@angular/core';
+import { FishingLogService } from '../fishing-log.service';
 import { FishingLog } from '../fishing-log/FishingLog.model';
 
 @Component({
@@ -9,9 +10,14 @@ import { FishingLog } from '../fishing-log/FishingLog.model';
 export class FishingLogItemComponent implements OnInit {
   @Input() fishingLog!: FishingLog;
 
-  constructor() { }
+  constructor(private fishingLogService: FishingLogService) { }
 
   ngOnInit(): void {
+  }
+
+  onDelete() {
+    console.log("delte called")
+    this.fishingLogService.deleteFishingLog(this.fishingLog)
   }
 
 }

@@ -1,4 +1,4 @@
-<form id="fishing-log-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
+<form id="fishing-log-edit" class="fishing-log-edit" (ngSubmit)="onSubmit(f)" #f="ngForm">
     <div class="form-group">
         <label for="location">Location</label>
         <input 
@@ -13,7 +13,7 @@
         >
     </div>
     <div class="form-group">
-        <label for="date">date</label>
+        <label for="date">Date</label>
         <input 
         type="date"
         id="date"
@@ -39,8 +39,38 @@
             {{fish.species}} | {{fish.length}} | {{fish.bait}}
             <button (onClick)="onRemoveItem(fishes.indexOf(fish))">X</button> 
         </div>
-        <form id="fish-list-form" (ngSubmit)="addToFishes(fishyForm)" #fishyForm="ngForm">
-
-        </form>
+        <div class="form-group">
+            <label for="image">Species</label>
+            <input 
+            type="text"
+            id="species"
+            class="form-control"
+            name="species"
+            [ngModel]="fishingLog?.fish[0].species" 
+            #name="ngModel">
+        </div>
+        <div class="form-group">
+            <label for="image">Length</label>
+            <input 
+            type="number"
+            id="length"
+            class="form-control"
+            name="length"
+            [ngModel]="fishingLog?.fish[0].length" 
+            #name="ngModel">
+        </div>
+        <div class="form-group">
+            <label for="image">Bait</label>
+            <input 
+            type="text"
+            id="bait"
+            class="form-control"
+            name="bait"
+            [ngModel]="fishingLog?.fish[0].bait" 
+            #name="ngModel">
+        </div>
+    </div>
+    <div class="form-buttons">
+        <button class="btn primary-btn">Add Fish</button>
     </div>
 </form>

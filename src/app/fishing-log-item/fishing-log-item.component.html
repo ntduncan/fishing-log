@@ -3,11 +3,14 @@
       <img class="photo" [src]="fishingLog.img" alt="fish" />
     </div>
     <div class="description">
+        <button class="delete-icon" (click)="onDelete()">X</button>
       <h2 class="fishing-log-title">
         {{fishingLog?.location}} - {{fishingLog?.date}}
       </h2>
       <div class="species-list" *ngFor="let fish of fishingLog.fish">
-        <span class="fish-species">{{fish?.species}}</span>
+        <span class="fish-species">{{fish?.species}}({{fish?.length}}in.) | {{fish?.bait}}</span>
+        <div class="bait"></div>
+        <br>
       </div>
     </div>
   </div>

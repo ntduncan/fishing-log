@@ -91,7 +91,7 @@ deleteFishingLog(fishingLog: FishingLog){
   }
 
   // delete from database
-  this.http.delete('http://localhost:3000/contacts/' + fishingLog.id)
+  this.http.delete('http://localhost:3000/catch/' + fishingLog.id)
     .subscribe(
       (response: any) => {
         this.fishingLogs.splice(pos, 1);

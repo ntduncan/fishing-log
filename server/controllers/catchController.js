@@ -62,11 +62,58 @@ const createCatch = (req, res, next) => {
 }
 
 const updateCatch = (req, res, next) => {
-    return;
+  Catch.findOne({id: req.params.id})
+  .then(catchObj => {
+    catchObj.id = req.body.id
+    catchObj.location = req.body.location;
+    catchObj.img = req.body.img;
+    catchObj.date = req.body.date;
+    catchObj.fish = req.body.fish
+  
+
+  Catch.updateOne({ id: req.params.id }, catchObj)
+          .then(result => {
+            res.status(204).json({
+              message: 'Catch updated successfully'
+            })
+          })
+          .catch(error => {
+             res.status(500).json({
+             message: 'An error occurred',
+             error: error
+           });
+          });
+      })
+      .catch(error => {
+        res.status(500).json({
+          message: 'Catch not found.',
+          error: { message: 'Catch not found'}
+        });
+      });
 }
 
 const deleteCatch = (req, res, next) => {
-    return;
+  Catch.findOne({ id: req.params.id })
+  .then(catchObj => {
+    Catch.deleteOne({ id: req.params.id })
+      .then(result => {
+        res.status(204).json({
+          message: "Catch deleted successfully"
+        });
+      })
+      .catch(error => {
+         res.status(500).json({
+         message: 'An error occurred',
+         error: error
+       });
+      })
+  })
+  .catch(error => {
+    res.status(500).json({
+      message: 'Catch not found.',
+      error: { document: 'Catch not found'}
+    });
+  });
 }
 
 module.exports = {
